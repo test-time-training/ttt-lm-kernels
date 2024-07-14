@@ -6,7 +6,7 @@
 | [**Setup**](#setup)
 | [**Quick Start**](#benchmark-usage)
 | [**Limitations**](#limitations)
-| [**Numerical Verifications**](#numerical-difference)
+| [**Empirical Verifications**](#numerical-difference)
 
 This codebase provides a fast implementation of **forward (prefill) and generate (decode)** for TTT-Linear and TTT-MLP, 
 and the corresponding script that reproduces the throughput results in our paper.
@@ -72,7 +72,7 @@ Limitations of our codebase:
 
 3. Only benchmarks on a single A100 GPU in fp16 precision.
 
-## Numerical Verifications
+## Empirical Verifications
 
 Numerical differences are normal between any PyTorch implementation and its corresponding kernel, 
 as the underlying computation libraries used by PyTorch cannot be easily controlled.
