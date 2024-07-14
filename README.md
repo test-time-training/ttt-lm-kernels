@@ -6,7 +6,7 @@
 | [**Setup**](#setup)
 | [**Quick Start**](#benchmark-usage)
 | [**Limitations**](#limitations)
-| [**Numerical Check**](#numerical-difference)
+| [**Numerical Verifications**](#numerical-difference)
 
 This codebase provides a fast implementation of **forward (prefill) and generate (decode)** for TTT-Linear and TTT-MLP, 
 and the corresponding script that reproduces the throughput results in our paper.
@@ -72,18 +72,18 @@ Limitations of our codebase:
 
 3. Only benchmarks on a single A100 GPU in fp16 precision.
 
-## Numerical Difference
+## Numerical Verifications
 
-Numerical difference is normal between any PyTorch implementation and its corresponding kernel, 
+Numerical differences are normal between any PyTorch implementation and its corresponding kernel, 
 as the underlying computation libraries used by PyTorch cannot be easily controlled.
 
-To verify that such numerical difference is within tolerance, we load the trained weights of a 1.3B model for both the PyTorch and kernelized implementation and compare their output probabilites. 
+To verify that such numerical differences are within tolerance, we load the trained weights of a 1.3B model for both the PyTorch and kernelized implementation and compare their output probabilites. 
 For prefill, both implementations use the same random input of shape `[B=32, T=512]`. 
 For decode, both use the same random input of shape `[B=32, 1]` and generate `[B=32, T=512]`.
 
 We denote the input token of the $i$-th sequence in the batch at the $t$-th time step as $x^i_t$, and its output probability by the PyTorch and kernelized implementation as $p(x^i_t)$ and $p^\prime(x^i_t)$, which both have shape `[Vocab,]` and sum up to 1.
 
-We define two metrics for quantifying numerical difference and measure them at each time step $t$:
+We define two metrics for numerical differences and measure them at each time step $t$:
 
 **Total variation distance (%)**:
 
