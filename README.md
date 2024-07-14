@@ -6,7 +6,7 @@
 | [**Setup**](#setup)
 | [**Quick Start**](#benchmark-usage)
 | [**Limitations**](#limitations)
-| [**Empirical Verifications**](#numerical-difference)
+| [**Empirical Verifications**](#empirical-verifications)
 
 This codebase provides a fast implementation of **forward (prefill) and generate (decode)** for TTT-Linear and TTT-MLP, 
 and the corresponding script that reproduces the throughput results in our paper.
