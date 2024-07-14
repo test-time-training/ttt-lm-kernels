@@ -1,12 +1,12 @@
-# Fast Inference Benchmark in PyTorch
+# Inference Speed Benchmark for Learning to (Learn at Test Time): RNNs with Expressive Hidden States
 
 [**Paper**](https://arxiv.org/abs/2407.04620)
 | [**JAX Codebase**](https://github.com/test-time-training/ttt-lm-jax)
 | [**PyTorch Codebase**](https://github.com/test-time-training/ttt-lm-pytorch)
 | [**Setup**](#setup)
 | [**Quick Start**](#benchmark-usage)
-| [**Limitations**](#scope-and-limitations)
-| [**Numerical Check**](#numerical-difference-verification)
+| [**Limitations**](#limitations)
+| [**Numerical Check**](#numerical-difference)
 
 This codebase provides a fast implementation of **forward (prefill) and generate (decode)** for TTT-Linear and TTT-MLP, 
 and the corresponding script that reproduces the throughput results in our paper.
